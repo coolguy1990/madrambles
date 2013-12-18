@@ -1,4 +1,5 @@
 /app/config/local/
+/app/my.todo
 /bootstrap/compiled.php
 /vendor
 composer.phar
