@@ -37,6 +37,17 @@ class User implements UserInterface, RemindableInterface {
 	}
 
 	/**
+	 *
+	 * Social Relationship
+	 *
+	 * @return Relationship
+	 */
+	public function social()
+	{
+		return $this->hasMany('MadRambles\Models\Social');
+	}
+
+	/**
 	 * Get the unique identifier for the user.
 	 *
 	 * @return mixed

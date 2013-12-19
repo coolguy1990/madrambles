@@ -1,5 +1,7 @@
 <?php
 
+use MadRambles\Models\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

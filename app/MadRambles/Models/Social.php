@@ -1,16 +1,17 @@
 <?php namespace MadRambles\Models;
 
-use Cache;
-use Carbon\Carbon;
-
-class Post extends \Eloquent{
+class Social extends \Eloquent {
 
 	/**
 	 * The table associated with the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'posts';
+	protected $table = 'social';
+
+	protected $guarded = array();
+
+	public static $rules = array();
 
 	/**
 	 *
@@ -22,16 +23,4 @@ class Post extends \Eloquent{
 	{
 		return $this->belongsTo('MadRambles\Models\User');
 	}
-
-	/**
-	 *
-	 * Tag Relationship
-	 *
-	 * @return Relationship
-	 */
-	public function tags()
-	{
-		return $this->belongsToMany('MadRambles\Models\Tag');
-	}
-
 }
