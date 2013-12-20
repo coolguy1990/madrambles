@@ -13,6 +13,13 @@ class Post extends \Eloquent{
 	protected $table = 'posts';
 
 	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = array('user_id', 'title', 'slug', 'content', 'excerpt', 'publish_date', 'active');
+
+	/**
 	 *
 	 * User Relationship
 	 *

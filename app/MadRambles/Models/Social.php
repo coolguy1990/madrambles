@@ -9,7 +9,19 @@ class Social extends \Eloquent {
 	 */
 	protected $table = 'social';
 
-	protected $guarded = array();
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = array('users_id', 'access_token', 'screen_name', 'social_id');
+
+	/**
+	 * The attributes excluded from the model's JSON form.
+	 *
+	 * @var array
+	 */
+	protected $hidden = array('access_token_secret', 'lifetime');
 
 	public static $rules = array();
 

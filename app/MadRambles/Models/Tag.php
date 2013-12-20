@@ -10,6 +10,13 @@ class Tag extends \Eloquent {
 	protected $table = 'tags';
 
 	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = array('name', 'url_name');
+
+	/**
 	 *
 	 * Post Relationship
 	 *
@@ -19,8 +26,6 @@ class Tag extends \Eloquent {
 	{
 		return $this->belongsToMany('MadRambles\Models\Post');
 	}
-
-	protected $guarded = array();
 
 	public static $rules = array();
 }
