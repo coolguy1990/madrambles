@@ -14,11 +14,12 @@ App::instance('MadRambles\Repositories\UserRepositoryInterface', 'MadRambles\Rep
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return App::environment();
 });
 
 Route::group(array('prefix' => 'admin'), function()
 {
     Route::get('login', 'MadRambles\Controllers\LoginController@index');
+    Route::post('login', 'MadRambles\Controllers\LoginController@store');
 });
 

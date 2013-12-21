@@ -28,78 +28,45 @@ class LoginController extends BaseController {
         $this->users = $users;
     }
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-        return View::make('logins.index');
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        return View::make('admin.logins.login');
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-        return View::make('logins.create');
-	}
+    /**
+     * Handles user login
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $email = mb_strtolower(Input::get('email'));
+        $password = Input::get('password');
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+        if($this->users->login($email, $password))
+        {
+            return Redirect::route('admin.index');
+        }
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-        return View::make('logins.show');
-	}
+        return Redirect::back()
+            ->withInput()
+            ->with('login_errors', true);
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-        return View::make('logins.edit');
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
+    /**
+     * Log the user out
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy()
+    {
+        $this->auth->logout();
+        return Redirect::route('admin.login');
+    }
 }
