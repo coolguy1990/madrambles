@@ -1,5 +1,6 @@
 <?php
 
+App::instance('MadRambles\Repositories\UserRepositoryInterface', 'MadRambles\Repositories\DbUserRepository');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,4 +17,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('login', 'MadRambles\Controllers\LoginController@index');
+Route::group(array('prefix' => 'admin'), function()
+{
+    Route::get('login', 'MadRambles\Controllers\LoginController@index');
+});
+

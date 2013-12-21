@@ -1,0 +1,8 @@
+{
+  "name": "MadRambles",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.0.3.0",
+    "foundation": "~5.0.2"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "bootstrap-sass",
+  "homepage": "https://github.com/twbs/bootstrap-sass",
+  "_release": "v3.0.3.0",
+  "_resolution": {
+    "type": "tag",
+    "tag": "v3.0.3.0",
+    "commit": "bbd3dfc4f181581ac38555955970d17e91c5fa4f"
+  },
+  "_source": "git://github.com/twbs/bootstrap-sass.git",
+  "_target": "v3.0.3.0",
+  "_originalSource": "git://github.com/twbs/bootstrap-sass.git",
+  "_direct": true
+}

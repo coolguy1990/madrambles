@@ -1,6 +1,32 @@
 <?php namespace MadRambles\Controllers;
 
+use View;
+use MadRambles\Repositories\UserRepositoryInterface;
+
 class LoginController extends BaseController {
+
+    /**
+     * The user repository implementation.
+     *
+     * @param \MadRambles\Repositories\UserRepositoryInterface
+     */
+    protected $users;
+
+    /**
+     * Create a new instance.
+     *
+     * @param UserRepositoryInterface $users
+     *
+     * @return LoginController
+     */
+    public function __contruct(UserRepositoryInterface $users)
+    {
+        parent::__contruct();
+        $this->beforeFilter('auth');
+        $this->beforeFilter('csrf');
+
+        $this->users = $users;
+    }
 
 	/**
 	 * Display a listing of the resource.
