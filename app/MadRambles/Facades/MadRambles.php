@@ -12,7 +12,7 @@ class MadRambles
 	 *
 	 * @var MadRambles\PostRepositoryInterface
 	 */
-	protected $postsRepo;
+	//protected $postsRepo;
 
 	/**
 	 * Create a new madramble facade instance.
@@ -21,10 +21,10 @@ class MadRambles
 	 *
 	 * @return \MadRambles\Facades\MadRambles
 	 */
-	public function __construct(PostRepositoryInterface $postsRepo)
-	{
-		$this->postsRepo = $postsRepo;
-	}
+	// public function __construct(PostRepositoryInterface $postsRepo)
+	// {
+	// 	$this->postsRepo = $postsRepo;
+	// }
 
 	/**
 	 * Fetch posts
@@ -33,18 +33,18 @@ class MadRambles
 	 *
 	 * @return Posts
 	 */
-	public function posts($params = array())
-	{
-		return $this->postsRepo->facadeSearch($params);
-	}
+	// public function posts($params = array())
+	// {
+	// 	return $this->postsRepo->facadeSearch($params);
+	// }
 
 	/**
 	 * Fetch all tags
 	 */
-	public function tags()
-	{
-		return $this->postsRepo->allTags();
-	}
+	// public function tags()
+	// {
+	// 	return $this->postsRepo->allTags();
+	// }
 
 	/**
 	 * Generate a route to a named group
@@ -54,17 +54,17 @@ class MadRambles
 	 *
 	 * @return string
 	 */
-	public function route($route, $param = null)
-	{
-		if($route === '/')
-		{
-			return route('madramble.index');
-		}
-		else
-		{
-			return \URL::route('madrambles.'.$route, $param);
-		}
-	}
+	// public function route($route, $param = null)
+	// {
+	// 	if($route === '/')
+	// 	{
+	// 		return route('madramble.index');
+	// 	}
+	// 	else
+	// 	{
+	// 		return \URL::route('madrambles.'.$route, $param);
+	// 	}
+	// }
 
 	// public function setupViews()
 	// {

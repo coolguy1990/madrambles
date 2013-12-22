@@ -29,9 +29,9 @@ class MadRamblesServiceProvider extends ServiceProvider {
 	 */
 	protected function bindRepositories()
 	{
-		$this->app->singleton('MadRambles\Repositories\PostRepositoryInterface', 'MadRambles\Repositories\DbPostRepository');
+		$this->app->bind('MadRambles\Repositories\PostRepositoryInterface', 'MadRambles\Repositories\DbPostRepository');
 
-		$this->app->singleton('MadRambles\Repositories\UserRepositoryInterface', 'MadRambles\Repositories\DbUserRepository');
+		$this->app->bind('MadRambles\Repositories\UserRepositoryInterface', 'MadRambles\Repositories\DbUserRepository');
 
 		// $this->app->bind('Wardrobe', function()
 		// {

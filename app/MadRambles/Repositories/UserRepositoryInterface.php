@@ -7,7 +7,7 @@ interface UserRepositoryInterface
      *
      * @return User
      */
-    public function all();
+    //public function all();
 
     /**
      * Get a User by their primary key.
@@ -29,7 +29,7 @@ interface UserRepositoryInterface
      *
      * @return User
      */
-    public function create($first_name, $last_name, $email, active, $password);
+    public function create($first_name, $last_name, $email, $active, $password);
 
     /**
      * Update a user
@@ -81,12 +81,12 @@ interface UserRepositoryInterface
      *
      * @return bool
      */
-    public function login($email, $password, $remember = false);
+    public function login($email, $password);
 
     /**
      * Delete a user
      *
      * @param integer $id
      */
-    public function delete($id);
+    //public function delete($id);
 }

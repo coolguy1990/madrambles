@@ -1,6 +1,6 @@
 <?php namespace MadRambles\Controllers;
 
-use View;
+use View, Input, Auth, Redirect;
 use MadRambles\Repositories\UserRepositoryInterface;
 
 class LoginController extends BaseController {
@@ -10,7 +10,7 @@ class LoginController extends BaseController {
      *
      * @param \MadRambles\Repositories\UserRepositoryInterface
      */
-    protected $users;
+    public $users;
 
     /**
      * Create a new instance.
@@ -19,12 +19,8 @@ class LoginController extends BaseController {
      *
      * @return LoginController
      */
-    public function __contruct(UserRepositoryInterface $users)
+    public function __construct(UserRepositoryInterface $users)
     {
-        parent::__contruct();
-        $this->beforeFilter('auth');
-        $this->beforeFilter('csrf');
-
         $this->users = $users;
     }
 
@@ -35,7 +31,11 @@ class LoginController extends BaseController {
      */
     public function index()
     {
-        return View::make('admin.logins.login');
+        //return View::make('admin.login');
+        return View::make('layouts.admin.admin')
+            ->with('body_class', 'admin login')
+            ->nest('nav', 'layouts.admin.navlogin')
+            ->nest('content', 'admin.login');
     }
 
     /**
@@ -48,14 +48,23 @@ class LoginController extends BaseController {
         $email = mb_strtolower(Input::get('email'));
         $password = Input::get('password');
 
+        //$u = new \MadRambles\Repositories\DbUserRepository;
+        //dd($email);
+
         if($this->users->login($email, $password))
         {
+            //dd($email);
             return Redirect::route('admin.index');
         }
 
+        // if(Auth::attempt(['email' => $email, 'password' => $password]))
+        // {
+        //     return Redirect::route('admin.index');
+        // }
+
         return Redirect::back()
             ->withInput()
-            ->with('login_errors', true);
+            ->with('auth_error', 'Invalid Credentials');
     }
 
     /**
@@ -66,7 +75,7 @@ class LoginController extends BaseController {
      */
     public function destroy()
     {
-        $this->auth->logout();
-        return Redirect::route('admin.login');
+        Auth::logout();
+        return Redirect::to('/admin/login');
     }
 }
