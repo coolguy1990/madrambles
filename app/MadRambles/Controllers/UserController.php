@@ -33,6 +33,26 @@ class UserController extends BaseController {
      */
     public function index()
     {
-        return $this->users->all();
+        return View::make('layouts.admin.admin')
+            ->with('body_class', 'admin article')
+            ->nest('nav', 'layouts.admin.nav')
+            ->nest('content', 'admin.users', [
+                'users' => $this->users->all()
+            ]);
+    }
+
+    /**
+     * Display a particular user
+     *
+     * @return Reponse
+     */
+    public function show($id)
+    {
+        return View::make('layouts.admin.admin')
+            ->with('body_class', 'admin article')
+            ->nest('nav', 'layouts.admin.nav')
+            ->nest('content', 'admin.user', [
+                'user' => $this->users->find($id)
+            ]);
     }
 }

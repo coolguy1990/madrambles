@@ -16,7 +16,7 @@ interface UserRepositoryInterface
      *
      * @return User
      */
-    //public function find($id);
+    public function find($id);
 
     /**
      * Create a user

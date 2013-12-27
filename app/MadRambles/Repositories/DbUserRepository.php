@@ -26,6 +26,18 @@ class DbUserRepository implements UserRepositoryInterface
   }
 
   /**
+   * Get the user by their primary key
+   *
+   * @param Interger $id
+   *
+   * @return array
+   */
+  public function find($id)
+  {
+    return User::findOrFail($id);
+  }
+
+  /**
    * Log the user into the application.
    *
    * If the credentials are invalid, return false, else return true.
