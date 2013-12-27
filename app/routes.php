@@ -1,6 +1,7 @@
 <?php
 
 App::bind('MadRambles\Repositories\UserRepositoryInterface', 'MadRambles\Repositories\DbUserRepository');
+App::bind('MadRambles\Repositories\PostRepositoryInterface', 'MadRambles\Repositories\DbPostRepository');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -24,5 +25,6 @@ Route::group(array('prefix' => 'admin'), function()
     Route::get('logout', 'MadRambles\Controllers\LoginController@destroy');
 
     Route::get('/', array('as' => 'admin.index', 'uses' => 'MadRambles\Controllers\AdminController@index'))->before('auth');
+    Route::resource('user', 'MadRambles\Controllers\UserController');
 });
 

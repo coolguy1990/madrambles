@@ -7,7 +7,7 @@ interface UserRepositoryInterface
      *
      * @return User
      */
-    //public function all();
+    public function all();
 
     /**
      * Get a User by their primary key.
@@ -16,7 +16,7 @@ interface UserRepositoryInterface
      *
      * @return User
      */
-    public function find($id);
+    //public function find($id);
 
     /**
      * Create a user
@@ -29,7 +29,7 @@ interface UserRepositoryInterface
      *
      * @return User
      */
-    public function create($first_name, $last_name, $email, $active, $password);
+    //public function create($first_name, $last_name, $email, $active, $password);
 
     /**
      * Update a user
@@ -43,7 +43,7 @@ interface UserRepositoryInterface
      *
      * @return User
      */
-    public function update($id, $first_name, $last_name, $email, $password, $active);
+    //public function update($id, $first_name, $last_name, $email, $password, $active);
 
     /**
      * Validate that the given user is valid for creation
@@ -55,7 +55,7 @@ interface UserRepositoryInterface
      *
      * @return \Illuminate\Support\MessageBag
      */
-    public function validForCreation($first_name, $last_name, $email, $password);
+    //public function validForCreation($first_name, $last_name, $email, $password);
 
     /**
      * Validate that the given user is valid for updating.
@@ -68,7 +68,7 @@ interface UserRepositoryInterface
      *
      * @return \Illuminate\Support\MessageBag
      */
-    public function validForUpdate($id, $first_name, $last_name, $email, $password);
+    //public function validForUpdate($id, $first_name, $last_name, $email, $password);
 
     /**
      * Log the user into the application.

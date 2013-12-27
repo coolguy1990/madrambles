@@ -18,7 +18,7 @@ interface PostRepositoryInterface
 	 *
 	 * @return array
 	 */
-	public function active($per_page);
+	//public function active($per_page);
 
 	/**
 	 * Get all posts with a tag
@@ -28,7 +28,7 @@ interface PostRepositoryInterface
 	 *
 	 * @return array
 	 */
-	public function activeByTag($tag, $per_page);
+	//public function activeByTag($tag, $per_page);
 
 	/**
 	 * Get all the posts with a tag
@@ -38,7 +38,7 @@ interface PostRepositoryInterface
 	 *
 	 * @return array
 	 */
-	public function search($search, $per_page);
+	//public function search($search, $per_page);
 
 	/**
 	 * Get a post by its primary key.
@@ -47,7 +47,7 @@ interface PostRepositoryInterface
 	 *
 	 * @return Post
 	 */
-	public function find($id);
+	//public function find($id);
 
 	/**
 	 * Get a Post by its slug
@@ -56,7 +56,7 @@ interface PostRepositoryInterface
 	 *
 	 * @return Post
 	 */
-	public function findBySlug($slug);
+	//public function findBySlug($slug);
 
 	/**
 	 * Create a new slug
@@ -71,7 +71,7 @@ interface PostRepositoryInterface
      *
      * @return Post
 	 */
-    public function create($title, $content, $slug, array $tags, $active, $user_id, DateTime $publish_date);
+    //public function create($title, $content, $slug, array $tags, $active, $user_id, DateTime $publish_date);
 
     /**
      * Update a post
@@ -87,7 +87,7 @@ interface PostRepositoryInterface
      *
      * @return Post
      */
-    public function update($id, $title, $content, $slug, array $tags, $active, $user_id, DateTime $publish_date);
+    //public function update($id, $title, $content, $slug, array $tags, $active, $user_id, DateTime $publish_date);
 
     /**
      * Delete the post with given ID.
@@ -96,14 +96,14 @@ interface PostRepositoryInterface
      *
      * @return void
      */
-    public function delete($id);
+    //public function delete($id);
 
     /**
      * Get a list of all the tags used by the blog
      *
      * @return array
      */
-    public function allTags();
+    //public function allTags();
 
     /**
      * Determine if the given post is valid for creating
@@ -113,7 +113,7 @@ interface PostRepositoryInterface
      *
      * @return \Illuminate\Support\MessageBad
      */
-    public function validForCreation($title, $slug);
+    //public function validForCreation($title, $slug);
 
     /**
      * Determine if given post is valid for updating
@@ -124,5 +124,5 @@ interface PostRepositoryInterface
      *
      * @return \Illuminate\Support\MessageBag
      */
-    public function validForUpdate($id, $title, $slug);
+    //public function validForUpdate($id, $title, $slug);
 }

@@ -16,6 +16,16 @@ class DbUserRepository implements UserRepositoryInterface
   }
 
   /**
+   * Get all of the users.
+   *
+   * @return array
+   */
+  public function all()
+  {
+    return User::all();
+  }
+
+  /**
    * Log the user into the application.
    *
    * If the credentials are invalid, return false, else return true.
