@@ -1,4 +1,5 @@
 <div class="container">
+    {{ Auth::user()->screen_name }}
     <h1>Posts</h1>
 
     <table class="table table-striped table-bordered">
@@ -8,7 +9,7 @@
                 <th>Title</th>
                 <th>Slug</th>
                 <th>Author</th>
-                <th>Status</th>
+                <th>Active</th>
                 <th>Created At</th>
                 <th>Last Updated</th>
                 <th>Publish Date</th>

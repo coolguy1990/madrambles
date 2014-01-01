@@ -47,7 +47,7 @@ interface PostRepositoryInterface
 	 *
 	 * @return Post
 	 */
-	//public function find($id);
+	public function find($id);
 
 	/**
 	 * Get a Post by its slug
@@ -64,14 +64,14 @@ interface PostRepositoryInterface
 	 * @param string 	$title
      * @param string    $content
      * @param string    $slug
-     * @param array     $tags
+     * @param string     $tags
      * @param bool      $active
      * @param integer   $user_id
      * @param DateTime  $publish_date
      *
      * @return Post
 	 */
-    //public function create($title, $content, $slug, array $tags, $active, $user_id, DateTime $publish_date);
+    public function create($title, $content, $slug, $tags, $active, $user_id, DateTime $publish_date);
 
     /**
      * Update a post
@@ -113,7 +113,7 @@ interface PostRepositoryInterface
      *
      * @return \Illuminate\Support\MessageBad
      */
-    //public function validForCreation($title, $slug);
+    public function validForCreation($title, $slug);
 
     /**
      * Determine if given post is valid for updating

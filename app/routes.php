@@ -26,5 +26,9 @@ Route::group(array('prefix' => 'admin'), function()
 
     Route::get('/', array('as' => 'admin.index', 'uses' => 'MadRambles\Controllers\AdminController@index'))->before('auth');
     Route::resource('user', 'MadRambles\Controllers\UserController');
+    Route::get('user', 'MadRambles\Controllers\UserController@index');
+    Route::get('user/{user}', 'MadRambles\Controllers\UserController@show');
+    Route::post('post', 'MadRambles\Controllers\PostController@store');
+    Route::resource('post', 'MadRambles\Controllers\PostController');
 });
 
