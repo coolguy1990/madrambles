@@ -2,6 +2,8 @@
 
 App::bind('MadRambles\Repositories\UserRepositoryInterface', 'MadRambles\Repositories\DbUserRepository');
 App::bind('MadRambles\Repositories\PostRepositoryInterface', 'MadRambles\Repositories\DbPostRepository');
+App::bind('MadRambles\Repositories\TagRepositoryInterface', 'MadRambles\Repositories\DbTagRepository');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -28,7 +30,7 @@ Route::group(array('prefix' => 'admin'), function()
     Route::resource('user', 'MadRambles\Controllers\UserController');
     Route::get('user', 'MadRambles\Controllers\UserController@index');
     Route::get('user/{user}', 'MadRambles\Controllers\UserController@show');
-    Route::post('post', 'MadRambles\Controllers\PostController@store');
+    //Route::post('post', 'MadRambles\Controllers\PostController@store');
     Route::resource('post', 'MadRambles\Controllers\PostController');
 });
 

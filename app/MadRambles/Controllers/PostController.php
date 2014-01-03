@@ -1,6 +1,6 @@
 <?php namespace MadRambles\Controllers;
 
-use View, Input;
+use View, Input, Redirect, Auth, DateTime;
 use Carbon\Carbon;
 
 use MadRambles\Repositories\PostRepositoryInterface;
@@ -51,20 +51,13 @@ class PostController extends BaseController {
 
     public function store()
     {
-        // $message = $this->posts->validForCreation(Input::get('title'), Input::get('slug'));
-
-        // if (count($message) > 0)
-        // {
-        //     return Response::json($message->all(), 400);
-        // }
-
         $data = array(
-            'user_id' => \Auth::user()->id,
+            'user_id' => Auth::user()->id,
             'title' => Input::get('title'),
             'slug' => Input::get('slug'),
             'content' => Input::get('content'),
             'excerpt' => Input::get('excerpt'),
-            'publish_date' => new \DateTime,
+            'publish_date' => new DateTime,
             'active' => Input::get('active')
         );
 
@@ -74,12 +67,12 @@ class PostController extends BaseController {
 
         $tags = $tag->tagsFromString(Input::get('tags'));
 
-        //if(count(tags))
-        //{
+        if(count($tags))
+        {
             $tag->setTagsForPost($post->id, $tags);
-        //}
+        }
 
-        return \Redirect::to('admin/post');
+        return Redirect::to('admin/post');
     }
 
 

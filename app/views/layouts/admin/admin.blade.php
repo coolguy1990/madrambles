@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="{{ asset('assests/bootstrap/dist/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ asset('components/css/admin.style.css')}}">
     <style>
-        body {
-            padding-top: 60px;
-        }
+        body { padding-top: 90px;}
     </style>
     <!-- Stylesheets -->
 </head>

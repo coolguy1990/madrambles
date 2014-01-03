@@ -1,23 +1,36 @@
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a href="/admin" class="brand">MadRambles</a>
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <li><a href="/admin/user">Users</a></li>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="/admin" class="navbar-brand">MadRambles</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="/admin/user">User</a></li>
+            <li><a href="/admin/tag">Tags</a></li>
+            <li class="dropdown">
+                <a href="/admin/post" class="dropdown-toggle" data-toggle="dropdown">Posts <b class="caret"></b></a>
+                <ul class="dropdown-menu">
                     <li><a href="/admin/post">Posts</a></li>
-                    <li><a href="/admin/post/create">New Post</a></li>
-                    <li><a href="/admin/tag">Tags</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/admin/post/new">New Post</a></li>
                 </ul>
-                <ul class="nav pull-right">
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Settings <b class="caret"></b></a>
+                <ul class="dropdown-menu">
                     <li><a href="/admin/logout">Logout</a></li>
                 </ul>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
-</div>
+</nav>
