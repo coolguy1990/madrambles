@@ -18,12 +18,12 @@
                 <ul class="dropdown-menu">
                     <li><a href="/admin/post">Posts</a></li>
                     <li class="divider"></li>
-                    <li><a href="/admin/post/new">New Post</a></li>
+                    <li><a href="/admin/post/create">New Post</a></li>
                 </ul>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Link</a></li>
+            <li><a href="/">Main Site</a></li>
             <li><a href="">Link</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Settings <b class="caret"></b></a>

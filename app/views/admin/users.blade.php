@@ -1,6 +1,6 @@
 <div class="container">
 	<h1>Users</h1>
-	<table class="table table-striped table-bordered">
+	<table class="table table-striped table-bordered table-responsive">
 		<thead>
 			<tr>
 				<th>Id</th>
