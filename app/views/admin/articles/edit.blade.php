@@ -47,9 +47,9 @@
                     @endif
 
                     <label for="excerpt" class="control-label">Excerpt:</label>
-                    <textarea name="excerpt" id="excerpt" class="form-control" rows="3" value="@if(isset($input['excerpt'])){{$input['excerpt']}}
+                    <textarea name="excerpt" id="excerpt" class="form-control" rows="3">@if(isset($input['excerpt'])){{$input['excerpt']}}
 @elseif(isset($post->excerpt)){{$post->excerpt}}
-@endif"></textarea>
+@endif</textarea>
                 </div> <!--  end of Excerpt  -->
 
                 <!--  Content  -->
@@ -61,9 +61,9 @@
                     @endif
 
                     <label for="content" class="control-label">Content:</label>
-                    <textarea name="content" id="content" class="form-control" rows="10" value="@if(isset($input['content'])){{$input['content']}}
+                    <textarea name="content" id="content" class="form-control" rows="10">@if(isset($input['content'])){{$input['content']}}
 @elseif(isset($post->content)){{$post->content}}
-@endif"></textarea>
+@endif</textarea>
                 </div> <!--  end of Content  -->
 
                 <!--  tags  -->
@@ -108,6 +108,17 @@
                         <option value="0">No</option>
                     </select>
                 </div> <!--  end of active  -->
+
+                <!--  Publish Date  -->
+                <div class="form-group">
+                    @if(isset($errors) && $errors->has('publish_date'))
+                        <span class="alert-errors">
+                            {{$errors->first('publish_date') }}
+                        </span>
+                    @endif
+                    <label for="publish_date" class="control-label">Publish Date:</label>
+                    <input class="form-control" type="datetime" id="publish_date" name="publish_date" value="@if(isset($input['publish_date'])){{$input['publish_date']}}@elseif(isset($post->publish_date)){{$post->publish_date}}@endif"/>
+                </div> <!--  end of publish date  -->
 
                 <button class="btn btn-large btn-primary" type="submit">Update Post</button>
 

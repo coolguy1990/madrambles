@@ -17,7 +17,7 @@ App::bind('MadRambles\Repositories\TagRepositoryInterface', 'MadRambles\Reposito
 
 Route::get('/', function()
 {
-	return App::environment();
+	return View::make('hello');
 });
 
 Route::group(array('prefix' => 'admin'), function()

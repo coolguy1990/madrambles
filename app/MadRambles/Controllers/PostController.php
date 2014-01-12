@@ -51,14 +51,15 @@ class PostController extends BaseController {
 
     public function store()
     {
+
         $data = array(
             'user_id' => Auth::user()->id,
             'title' => Input::get('title'),
             'slug' => Input::get('slug'),
             'content' => Input::get('content'),
             'excerpt' => Input::get('excerpt'),
-            'publish_date' => new DateTime,
-            'active' => Input::get('active')
+            'publish_date' => Carbon::createFromTimestamp(strtotime(Input::get('publish_date'))),
+            'active' => (int) Input::get('active')
         );
 
         $post = \MadRambles\Models\Post::create($data);
@@ -126,8 +127,8 @@ class PostController extends BaseController {
         $post->slug = Input::get('slug');
         $post->excerpt = Input::get('excerpt');
         $post->content = Input::get('content');
-        $post->publish_date = new DateTime;
-        $post->active = Input::get('active');
+        $post->publish_date = Carbon::createFromTimestamp(strtotime(Input::get('publish_date')));
+        $post->active = (int) Input::get('active_id');
 
         $post->save();
 
