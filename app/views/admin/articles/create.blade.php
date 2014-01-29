@@ -90,7 +90,7 @@
 
                     <label class="control-label" for="publish_date">Publish Date:</label>
                     <div class="controls">
-                        <input class="form-control" type="date" id="publish_date" name="publish_date" />
+                        <input class="form-control" type="datetime-local" id="publish_date" name="publish_date" />
 
                         <span class="help-inline"></span>
 

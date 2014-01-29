@@ -1,5 +1,4 @@
 <div class="container">
-    {{ Auth::user()->screen_name }}
     <h1>Posts</h1>
 
     <table class="table table-striped table-bordered table-responsive">
